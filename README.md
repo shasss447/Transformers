@@ -23,4 +23,7 @@ The Transformer model consists of:
 - **Encoder and Decoder Layers**: Each layer contains a multi-head self-attention mechanism, feed-forward neural network, and normalization layers
 - **Positional Encoding**: Adds position information to input embeddings
 - **Final Linear Layer**: Projects encoder-decoder outputs to vocabulary logits
-[](/image.png)
+
+
+<img src="/image.png" alt="Image description" width="400" height="300">
+
