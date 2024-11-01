@@ -24,6 +24,6 @@ The Transformer model consists of:
 - **Positional Encoding**: Adds position information to input embeddings
 - **Final Linear Layer**: Projects encoder-decoder outputs to vocabulary logits
 
-
-<img src="/image.png" alt="Image description" width="400" height="300">
-
+<div align="center">
+<img src="/image.png" alt="Image description" width="400" height="400">
+</div>
