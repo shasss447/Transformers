@@ -27,7 +27,7 @@ class MultiHeadAttention(nn.Module):
         if mask is not None:
             attn_scores = attn_scores.masked_fill(mask == 0, -1e9)
         
-        # Softmax is applied to obtain attention probabilities
+        # Softmax is applied to obtain   attention probabilities
         attn_probs = torch.softmax(attn_scores, dim=-1)
         
         # Multiply by values to obtain the final output
@@ -36,12 +36,12 @@ class MultiHeadAttention(nn.Module):
         
     def split_heads(self, x):
         # Reshape the input to have num_heads for multi-head attention
-        batch_size, seq_length, d_model = x.size()
+        batch_size, seq_length, _ = x.size()
         return x.view(batch_size, seq_length, self.num_heads, self.d_k).transpose(1, 2)
         
     def combine_heads(self, x):
         # Combine the multiple heads back to original shape
-        batch_size, _, seq_length, d_k = x.size()
+        batch_size, _, seq_length, _ = x.size()
         return x.transpose(1, 2).contiguous().view(batch_size, seq_length, self.d_model)
         
     def forward(self, Q, K, V, mask=None):
